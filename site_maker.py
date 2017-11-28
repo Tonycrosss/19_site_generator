@@ -1,6 +1,7 @@
 import markdown
 from livereload import Server
 import jinja2
+import json
 
 
 def convert_md_to_html():
@@ -15,8 +16,16 @@ def convert_md_to_html():
 def make_site():
     print(1)
 
+def load_config():
+    with open('./config.json', 'r') as file_handler:
+        json_data = json.load(file_handler)
+    for topic in json_data['topics']:
+        print(topic)
+    return json
+
 
 if __name__ == '__main__':
+    load_config()
     env = jinja2.Environment(
         loader=jinja2.FileSystemLoader('templates'))
     template = env.get_template('index.html')
