@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
 {% block body %}
   <h1>Список тем</h1>
-
+  {% for topic_data in topics_data %}
   <div class="topic-list">
-    <h2> Тут будет название топика  {{ topic_title }}</h2>
+    <h2>{{ topic_data['title'] }}</h2>
     <li>
-      <a href="Будет ссылочка на топик">ссылочка</a>
+      <a href="Будет ссылочка на топик">ссылочка1</a>
     </li>
   </div>
+  {% endfor %}
 {% endblock %}
