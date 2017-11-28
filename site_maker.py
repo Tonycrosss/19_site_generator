@@ -23,8 +23,9 @@ def create_index_page(topics_data, articles_data):
         index_handler.write(index_template.render(topics_data=topics_data, articles_data=articles_data))
 
 
-def make_site(topics_data):
-    create_index_page(topics_data)
+def make_site(json_data):
+    create_index_page(topics_data=json_data['topics'], articles_data=json_data['articles'])
+    create_static_pages(json_data)
 
 
 def create_static_pages(json_data):
@@ -44,10 +45,7 @@ def load_config():
 
 if __name__ == '__main__':
     json_data = load_config()
-    print(json_data)
-    create_index_page(topics_data=json_data['topics'], articles_data=json_data['articles'])
-    create_static_pages(json_data)
     server = Server()
-    # server.watch('templates/*.html', make_site(topics_data))
+    server.watch('templates/*.html', make_site(json_data))
     # TODO watch for changes in markdown articles
     server.serve(root='site/') # folder to serve html files from

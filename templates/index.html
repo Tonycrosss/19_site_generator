@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
+  <h1>Список всех тем</h1>
   {% for topic_data in topics_data %}
   <div class="topic-list">
     <h2>{{ topic_data['title'] }}</h2>
