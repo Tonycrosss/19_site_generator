@@ -11,9 +11,6 @@ env = jinja2.Environment(
 def convert_md_to_html(filepath):
     with open(str(filepath), 'r', encoding='utf-8') as md_file_handler:
         html = markdown.markdown(md_file_handler.read())
-    # with open('./html.html', 'w', encoding='utf-8') as html_file_handler:
-    #     html_file_handler.write(html)
-        # TODO сохранение всех мд в хтмл
         return html
 
 
