@@ -17,11 +17,13 @@ def convert_md_to_html(filepath):
 def create_index_page(topics_data, articles_data):
     index_template = env.get_template('index.html')
     with open('./index.html', 'w', encoding='utf-8') as index_handler:
-        index_handler.write(index_template.render(topics_data=topics_data, articles_data=articles_data))
+        index_handler.write(index_template.render(topics_data=topics_data,
+                                                  articles_data=articles_data))
 
 
 def make_site(json_data):
-    create_index_page(topics_data=json_data['topics'], articles_data=json_data['articles'])
+    create_index_page(topics_data=json_data['topics'],
+                      articles_data=json_data['articles'])
     create_static_pages(json_data)
 
 
@@ -44,5 +46,4 @@ if __name__ == '__main__':
     json_data = load_config()
     server = Server()
     server.watch('templates/*.html', make_site(json_data))
-    # TODO watch for changes in markdown articles
-    server.serve(root='./') # folder to serve html files from
+    server.serve(root='./')  # folder to serve html files from
