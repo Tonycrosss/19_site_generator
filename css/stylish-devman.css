@@ -11,7 +11,7 @@ body {
   width: 100%;
   height: 100%;
   color: black;
-  background: url(./img/bg.jpg) no-repeat center scroll;
+  background: url(../img/bg.jpg) no-repeat center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
