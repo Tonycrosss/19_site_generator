@@ -7,7 +7,7 @@
     {% for article in articles_data %}
       {% if article['topic'] == topic_data['slug'] %}
         <li>
-          <a href="/pages/{{ article['title'] }}.html">{{ article['title'] }}</a>
+          <a href="./{{ article['title'] }}.html">{{ article['title'] }}</a>
         </li>
   </div>
       {% endif %}

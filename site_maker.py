@@ -16,7 +16,7 @@ def convert_md_to_html(filepath):
 
 def create_index_page(topics_data, articles_data):
     index_template = env.get_template('index.html')
-    with open('./index.html', 'w', encoding='utf-8') as index_handler:
+    with open('./pages/index.html', 'w', encoding='utf-8') as index_handler:
         index_handler.write(index_template.render(topics_data=topics_data,
                                                   articles_data=articles_data))
 
