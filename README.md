@@ -5,6 +5,14 @@ With all links to this files
 
 Link to ready site - https://tonycrosss.github.io/19_site_generator/
 
+# Install requirements
+
+All needed packages are in requirements.txt
+
+```bash
+$ pip3 install -r requirements.txt
+```
+
 # Usage Example
 
 Just simply start script site_maker.py
