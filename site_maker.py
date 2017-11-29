@@ -46,4 +46,4 @@ if __name__ == '__main__':
     json_data = load_config()
     server = Server()
     server.watch('templates/*.html', make_site(json_data))
-    server.serve(root='./')  # folder to serve html files from
+    server.serve(root='./docs/')  # folder to serve html files from
